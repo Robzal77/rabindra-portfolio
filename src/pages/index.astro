@@ -1,17 +1,362 @@
 ---
+const resumeUrl = 'https://drive.google.com/file/d/1OiubvqIu0he1P8jVqUz9sSX1S_dmXDD7/view';
+const email = 'mailto:Rabindra.rizal@gmail.com';
+const linkedin = 'https://www.linkedin.com/in/rabindrarizal';
 
+const outcomes = [
+	{ value: '7 FTE', label: 'annual capacity returned through automation' },
+	{ value: '−90%', label: 'manual effort in global carbon reporting' },
+	{ value: '46 → 81', label: 'stakeholder NPS after closing trust gaps' },
+	{ value: '13h → 2h', label: 'refresh time for Europe Daily Sales' },
+];
+
+const caseStudies = [
+	{
+		number: '01',
+		domain: 'Sustainability · Data product',
+		title: 'Making carbon reporting operational, not heroic.',
+		brief: 'A four-zone reporting process depended on intensive manual collection and validation. I led the roadmap, controls and cross-functional delivery that moved it toward a governed data product.',
+		results: ['90% less manual effort', '97% reported accuracy', 'Audit readiness restored'],
+		practice: 'Microsoft Fabric · Databricks · ADF · Power BI · data quality',
+	},
+	{
+		number: '02',
+		domain: 'Analytics platform · Operating model',
+		title: 'Turning scattered BI craft into a reusable system.',
+		brief: 'The Power BI Excellence Framework joins PBIP/TMDL, Git workflows, semantic-model standards, report-health scoring, design assets and documentation into one practical way of working.',
+		results: ['~40% less report fragmentation', '~7 FTE annual value', '67% less recurring reporting work'],
+		practice: 'PBIP · TMDL · Git · Python · governance · enablement',
+	},
+	{
+		number: '03',
+		domain: 'Commercial analytics · Modernisation',
+		title: 'Speed mattered. Trust mattered more.',
+		brief: 'I led the Qlik-to-Power BI modernisation of Europe Daily Sales, then used adoption, feedback and data-quality signals to keep improving the product after launch.',
+		results: ['100+ hours saved monthly', '260+ average daily views', 'NPS improved to 81'],
+		practice: 'Product discovery · semantic models · Power BI · adoption',
+	},
+];
 ---
 
+<!doctype html>
 <html lang="en">
 	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+		<meta name="theme-color" content="#f3efe6" />
+		<meta name="description" content="Rabindra Rizal is a data, analytics and AI program leader building governed systems that turn complexity into measurable outcomes." />
+		<meta property="og:title" content="Rabindra Rizal — Data, analytics & AI systems" />
+		<meta property="og:description" content="Selected work in global analytics, automation, responsible AI and enterprise data products." />
+		<meta property="og:type" content="website" />
+		<meta name="twitter:card" content="summary" />
+		<link rel="icon" href={`${import.meta.env.BASE_URL}favicon.ico`} />
+		<title>Rabindra Rizal — Data, analytics & AI systems</title>
+		<script type="application/ld+json" set:html={JSON.stringify({
+			'@context': 'https://schema.org',
+			'@type': 'Person',
+			name: 'Rabindra Rizal',
+			jobTitle: 'Technology & Program Manager',
+			url: Astro.url.href,
+			sameAs: [linkedin],
+			knowsAbout: ['Data products', 'Business intelligence', 'Analytics platforms', 'Responsible AI', 'Program management'],
+		})}></script>
 	</head>
 	<body>
-		<h1>Astro</h1>
+		<a class="skip-link" href="#main">Skip to work</a>
+		<header class="site-header wrap">
+			<a class="wordmark" href="#top" aria-label="Rabindra Rizal, home">RR<span>®</span></a>
+			<nav aria-label="Primary navigation">
+				<a href="#work">Work</a>
+				<a href="#ai">AI practice</a>
+				<a href="#about">About</a>
+			</nav>
+			<a class="quiet-link header-contact" href={email}>Let’s talk <span aria-hidden="true">↗</span></a>
+		</header>
+
+		<main id="main">
+			<section class="hero wrap" id="top" aria-labelledby="hero-title">
+				<div class="hero-kicker"><span class="status-dot"></span> Bengaluru · working globally</div>
+				<h1 id="hero-title">I turn complicated data work into systems <em>people trust.</em></h1>
+				<div class="hero-bottom">
+					<p class="lede">I’m Rabindra, a technology and program leader working across analytics, automation and responsible AI. I care about the operating model after the launch—not just the launch.</p>
+					<div class="hero-actions">
+						<a class="button" href="#work">See selected work <span aria-hidden="true">↓</span></a>
+						<a class="quiet-link" href={resumeUrl} target="_blank" rel="noreferrer">Open résumé <span aria-hidden="true">↗</span></a>
+					</div>
+				</div>
+			</section>
+
+			<section class="outcomes wrap" aria-labelledby="outcomes-title">
+				<p class="eyebrow" id="outcomes-title">A few outcomes, not a wall of claims</p>
+				<div class="outcome-grid">
+					{outcomes.map((outcome) => (
+						<div class="outcome">
+							<strong>{outcome.value}</strong>
+							<span>{outcome.label}</span>
+						</div>
+					))}
+				</div>
+			</section>
+
+			<section class="work wrap" id="work" aria-labelledby="work-title">
+				<div class="section-intro">
+					<p class="eyebrow">Selected work · 2021–now</p>
+					<h2 id="work-title">Systems with a life after launch.</h2>
+					<p>Three examples of how I frame the problem, align the work and make the result repeatable.</p>
+				</div>
+
+				<div class="case-list">
+					{caseStudies.map((study) => (
+						<article class="case-study">
+							<div class="case-meta">
+								<span>{study.number}</span>
+								<p>{study.domain}</p>
+							</div>
+							<div class="case-body">
+								<h3>{study.title}</h3>
+								<p class="case-brief">{study.brief}</p>
+								<ul class="results" aria-label="Results">
+									{study.results.map((result) => <li>{result}</li>)}
+								</ul>
+								<p class="practice"><span>Practice</span> {study.practice}</p>
+							</div>
+						</article>
+					))}
+				</div>
+			</section>
+
+			<section class="ai-section" id="ai" aria-labelledby="ai-title">
+				<div class="wrap ai-layout">
+					<div>
+						<p class="eyebrow light">AI in practice</p>
+						<h2 id="ai-title">AI is not the headline. <em>The operating model is.</em></h2>
+					</div>
+					<div class="ai-copy">
+						<p class="ai-lede">I use AI where it reduces the distance between intent and a trustworthy outcome—with human review, explicit controls and a way to measure whether it helped.</p>
+						<dl>
+							<div>
+								<dt>Knowledge that survives handoffs</dt>
+								<dd>Copilot-enabled project context and agent-assisted documentation make requirements, decisions and data definitions easier to find and maintain.</dd>
+							</div>
+							<div>
+								<dt>Agents for repeatable work</dt>
+								<dd>Reusable skills and agents support recurring analytics activities, while people remain accountable for validation and release.</dd>
+							</div>
+							<div>
+								<dt>Governance by design</dt>
+								<dd>Responsible-AI principles, traceable inputs and quality gates are part of the workflow—not a policy document added at the end.</dd>
+							</div>
+						</dl>
+					</div>
+				</div>
+			</section>
+
+			<section class="about wrap" id="about" aria-labelledby="about-title">
+				<div class="section-intro about-intro">
+					<p class="eyebrow">The shorter version</p>
+					<h2 id="about-title">Builder, translator, team lead.</h2>
+				</div>
+				<div class="about-grid">
+					<div class="about-copy">
+						<p>Over 12 years, I’ve moved from implementation engineering to BI development, product discovery and global program leadership. Today I lead across BI, data engineering and analytics for Sustainability, Logistics and Commercial portfolios.</p>
+						<p>My favourite systems leave the next person less dependent on the person who built them. That usually means clearer decisions, reusable standards, better documentation and honest measures of adoption.</p>
+					</div>
+					<ol class="timeline" aria-label="Career timeline">
+						<li><span>2022—now</span><strong>Technology & Program Manager</strong><small>AB InBev · global analytics and automation</small></li>
+						<li><span>2021—22</span><strong>Principal Analyst</strong><small>AB InBev · product modernisation and adoption</small></li>
+						<li><span>2014—21</span><strong>Engineer → BI lead</strong><small>Wipro · implementation, analytics and team delivery</small></li>
+					</ol>
+				</div>
+			</section>
+
+			<section class="now wrap" aria-labelledby="now-title">
+				<p class="eyebrow">Currently exploring</p>
+				<h2 id="now-title">Local-first knowledge systems, agentic quality assurance and a more code-native future for enterprise BI.</h2>
+				<p>Not because every problem needs AI. Because the right infrastructure can give teams more time for judgment.</p>
+			</section>
+
+			<section class="contact" aria-labelledby="contact-title">
+				<div class="wrap contact-inner">
+					<p class="eyebrow light">Start a useful conversation</p>
+					<h2 id="contact-title">Have a complex data or AI program that needs a clearer operating model?</h2>
+					<div class="contact-links">
+						<a class="button button-light" href={email}>Email Rabindra <span aria-hidden="true">↗</span></a>
+						<a class="quiet-link quiet-light" href={linkedin} target="_blank" rel="noreferrer">LinkedIn <span aria-hidden="true">↗</span></a>
+						<a class="quiet-link quiet-light" href={resumeUrl} target="_blank" rel="noreferrer">Résumé <span aria-hidden="true">↗</span></a>
+					</div>
+				</div>
+			</section>
+		</main>
+
+		<footer class="site-footer wrap">
+			<p>© {new Date().getFullYear()} Rabindra Rizal</p>
+			<p>Designed around the work. Built to be read.</p>
+			<a href="#top">Back to top ↑</a>
+		</footer>
 	</body>
 </html>
+
+<style is:global>
+	:root {
+		--paper: #f3efe6;
+		--paper-deep: #e8e1d4;
+		--ink: #17201b;
+		--muted: #596159;
+		--line: #c9c3b8;
+		--accent: #a14e32;
+		--dark: #17251e;
+		--dark-muted: #b9c1ba;
+		--max: 1240px;
+		font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+		color: var(--ink);
+		background: var(--paper);
+		font-synthesis: none;
+	}
+
+	* { box-sizing: border-box; }
+	html { scroll-behavior: smooth; }
+	body { margin: 0; background: var(--paper); line-height: 1.55; }
+	a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: .22em; }
+	a:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
+	::selection { background: var(--accent); color: #fff; }
+	.wrap { width: min(calc(100% - 48px), var(--max)); margin-inline: auto; }
+	.skip-link { position: fixed; z-index: 20; top: 12px; left: 12px; padding: 10px 14px; background: var(--ink); color: #fff; transform: translateY(-160%); }
+	.skip-link:focus { transform: translateY(0); }
+
+	.site-header { min-height: 88px; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; border-bottom: 1px solid var(--line); }
+	.wordmark { width: fit-content; font: 700 1.25rem/1 Georgia, serif; text-decoration: none; letter-spacing: -.04em; }
+	.wordmark span { color: var(--accent); font: 600 .52rem/1 ui-sans-serif, system-ui; vertical-align: top; margin-left: 2px; }
+	nav { display: flex; gap: 30px; }
+	nav a, .quiet-link { font-size: .88rem; font-weight: 650; text-decoration: none; border-bottom: 1px solid transparent; }
+	nav a:hover, .quiet-link:hover { border-bottom-color: currentColor; }
+	.header-contact { justify-self: end; }
+
+	.hero { padding: clamp(80px, 11vw, 150px) 0 92px; }
+	.hero-kicker, .eyebrow { text-transform: uppercase; letter-spacing: .13em; font-size: .72rem; font-weight: 750; }
+	.status-dot { display: inline-block; width: 8px; height: 8px; margin-right: 9px; border-radius: 50%; background: var(--accent); }
+	h1, h2, h3 { margin: 0; text-wrap: balance; }
+	h1, h2 { font-family: Georgia, "Times New Roman", serif; font-weight: 400; letter-spacing: -.045em; }
+	h1 { max-width: 1120px; margin-top: 30px; font-size: clamp(3.35rem, 8.3vw, 8.4rem); line-height: .94; }
+	h1 em, h2 em { color: var(--accent); font-weight: 400; }
+	.hero-bottom { display: grid; grid-template-columns: 1.25fr .75fr; gap: 80px; align-items: end; margin-top: 62px; padding-left: min(16vw, 210px); }
+	.lede { max-width: 700px; margin: 0; font-size: clamp(1.1rem, 1.7vw, 1.42rem); line-height: 1.55; color: #303831; }
+	.hero-actions { display: flex; align-items: center; gap: 24px; flex-wrap: wrap; }
+	.button { display: inline-flex; align-items: center; justify-content: center; gap: 28px; min-height: 50px; padding: 13px 18px; background: var(--ink); color: #fff; font-size: .86rem; font-weight: 700; text-decoration: none; border: 1px solid var(--ink); transition: transform .18s ease, background .18s ease; }
+	.button:hover { transform: translateY(-2px); background: var(--accent); border-color: var(--accent); }
+
+	.outcomes { padding: 32px 0 84px; border-top: 1px solid var(--line); }
+	.eyebrow { margin: 0 0 28px; color: var(--muted); }
+	.outcome-grid { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+	.outcome { min-height: 175px; padding: 28px 30px 24px 0; display: flex; flex-direction: column; justify-content: space-between; border-right: 1px solid var(--line); }
+	.outcome + .outcome { padding-left: 30px; }
+	.outcome:last-child { border-right: 0; }
+	.outcome strong { font: 400 clamp(2.3rem, 4vw, 4rem)/1 Georgia, serif; letter-spacing: -.04em; }
+	.outcome span { max-width: 190px; color: var(--muted); font-size: .84rem; }
+
+	.work { padding: 92px 0 130px; }
+	.section-intro { display: grid; grid-template-columns: .55fr 1.4fr .7fr; gap: 48px; align-items: start; margin-bottom: 82px; }
+	.section-intro h2 { font-size: clamp(2.6rem, 5vw, 5rem); line-height: 1; }
+	.section-intro > p:last-child { margin: 7px 0 0; color: var(--muted); font-size: .98rem; }
+	.case-list { border-top: 1px solid var(--ink); }
+	.case-study { display: grid; grid-template-columns: .55fr 2.1fr; gap: 48px; padding: 58px 0 66px; border-bottom: 1px solid var(--line); }
+	.case-meta span { display: block; margin-bottom: 50px; color: var(--accent); font: 400 2rem/1 Georgia, serif; }
+	.case-meta p { max-width: 180px; margin: 0; color: var(--muted); font-size: .78rem; text-transform: uppercase; letter-spacing: .1em; }
+	.case-body h3 { max-width: 820px; font: 400 clamp(2.1rem, 4vw, 4.2rem)/1.02 Georgia, serif; letter-spacing: -.04em; }
+	.case-brief { max-width: 800px; margin: 32px 0 36px; color: #3f4941; font-size: 1.05rem; }
+	.results { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 42px; padding: 0; list-style: none; }
+	.results li { padding: 8px 11px; border: 1px solid var(--line); border-radius: 999px; font-size: .76rem; font-weight: 700; }
+	.practice { margin: 0; color: var(--muted); font-size: .78rem; }
+	.practice span { color: var(--ink); font-weight: 750; text-transform: uppercase; letter-spacing: .08em; margin-right: 12px; }
+
+	.ai-section { background: var(--dark); color: #f5f0e7; padding: 120px 0 130px; }
+	.ai-layout { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(70px, 10vw, 155px); }
+	.eyebrow.light { color: var(--dark-muted); }
+	.ai-layout h2 { max-width: 610px; font-size: clamp(3rem, 6.5vw, 6.5rem); line-height: .96; }
+	.ai-layout h2 em { color: #d88767; }
+	.ai-copy { padding-top: 47px; }
+	.ai-lede { margin: 0 0 60px; font-size: 1.25rem; color: #e5e9e5; }
+	dl { margin: 0; }
+	dl > div { padding: 26px 0 30px; border-top: 1px solid #415048; }
+	dl > div:last-child { border-bottom: 1px solid #415048; }
+	dt { margin-bottom: 9px; font: 400 1.42rem/1.25 Georgia, serif; }
+	dd { margin: 0; color: var(--dark-muted); font-size: .9rem; }
+
+	.about { padding: 120px 0 130px; }
+	.about-intro { grid-template-columns: .55fr 1.4fr .7fr; margin-bottom: 68px; }
+	.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(70px, 10vw, 150px); padding-left: min(16vw, 210px); }
+	.about-copy p { margin: 0 0 24px; font-size: 1.08rem; color: #374038; }
+	.about-copy p:first-child::first-letter { float: left; margin: .03em .12em 0 0; color: var(--accent); font: 400 4.3rem/.72 Georgia, serif; }
+	.timeline { margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--line); }
+	.timeline li { display: grid; grid-template-columns: 90px 1fr; padding: 21px 0; border-bottom: 1px solid var(--line); }
+	.timeline span { grid-row: 1 / 3; color: var(--accent); font-size: .72rem; font-weight: 750; text-transform: uppercase; letter-spacing: .08em; }
+	.timeline strong { font: 400 1.12rem/1.3 Georgia, serif; }
+	.timeline small { margin-top: 3px; color: var(--muted); }
+
+	.now { padding: 80px 0 100px; border-top: 1px solid var(--line); }
+	.now h2 { max-width: 1030px; font-size: clamp(2.5rem, 5vw, 5.3rem); line-height: 1.02; }
+	.now > p:last-child { max-width: 590px; margin: 38px 0 0 auto; color: var(--muted); font-size: 1.05rem; }
+
+	.contact { background: var(--accent); color: #fffaf4; }
+	.contact-inner { padding: 100px 0 110px; }
+	.contact h2 { max-width: 1070px; font-size: clamp(3rem, 6.6vw, 6.8rem); line-height: .96; }
+	.contact-links { display: flex; align-items: center; gap: 28px; margin-top: 58px; flex-wrap: wrap; }
+	.button-light { color: var(--ink); background: #fffaf4; border-color: #fffaf4; }
+	.button-light:hover { color: #fff; background: var(--dark); border-color: var(--dark); }
+	.quiet-light { color: #fff; }
+
+	.site-footer { min-height: 112px; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 30px; color: var(--muted); font-size: .76rem; }
+	.site-footer p { margin: 0; }
+	.site-footer p:nth-child(2) { text-align: center; }
+	.site-footer a { justify-self: end; font-weight: 700; text-decoration: none; }
+
+	@media (max-width: 900px) {
+		.wrap { width: min(calc(100% - 32px), var(--max)); }
+		.site-header { grid-template-columns: 1fr auto; }
+		nav { display: none; }
+		.hero { padding-top: 72px; }
+		.hero-bottom, .section-intro, .ai-layout, .about-grid { grid-template-columns: 1fr; }
+		.hero-bottom, .about-grid { padding-left: 0; }
+		.hero-bottom { gap: 34px; margin-top: 42px; }
+		.outcome-grid { grid-template-columns: 1fr 1fr; }
+		.outcome:nth-child(2) { border-right: 0; }
+		.outcome:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
+		.section-intro { gap: 16px; }
+		.section-intro > p:last-child { max-width: 520px; }
+		.case-study { grid-template-columns: 110px 1fr; gap: 24px; }
+		.ai-layout { gap: 42px; }
+		.ai-copy { padding-top: 0; }
+		.about-grid { gap: 46px; }
+	}
+
+	@media (max-width: 580px) {
+		.site-header { min-height: 72px; }
+		.header-contact { font-size: .78rem; }
+		h1 { font-size: clamp(3rem, 17vw, 5.2rem); }
+		.hero { padding-bottom: 66px; }
+		.outcomes { padding-bottom: 48px; }
+		.outcome-grid { grid-template-columns: 1fr; }
+		.outcome, .outcome + .outcome { min-height: 130px; padding: 22px 0; border-right: 0; border-bottom: 1px solid var(--line); }
+		.outcome:last-child { border-bottom: 0; }
+		.outcome span { max-width: 250px; }
+		.work, .about { padding: 76px 0 84px; }
+		.section-intro { margin-bottom: 48px; }
+		.case-study { grid-template-columns: 1fr; padding: 42px 0 48px; }
+		.case-meta { display: flex; justify-content: space-between; align-items: start; }
+		.case-meta span { margin: 0; }
+		.case-meta p { text-align: right; }
+		.case-body h3 { margin-top: 14px; }
+		.ai-section { padding: 82px 0 90px; }
+		.ai-lede { margin-bottom: 38px; }
+		.now { padding: 65px 0 76px; }
+		.now > p:last-child { margin-left: 0; }
+		.contact-inner { padding: 78px 0 85px; }
+		.site-footer { grid-template-columns: 1fr auto; min-height: 92px; }
+		.site-footer p:nth-child(2) { display: none; }
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		html { scroll-behavior: auto; }
+		*, *::before, *::after { transition-duration: .01ms !important; }
+	}
+</style>
